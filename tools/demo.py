@@ -18,6 +18,7 @@ from fast_rcnn.config import cfg
 from fast_rcnn.test import im_detect
 from fast_rcnn.nms_wrapper import nms
 from utils.timer import Timer
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.io as sio
@@ -67,7 +68,7 @@ def vis_detections(im, class_name, dets, thresh=0.5):
                   fontsize=14)
     plt.axis('off')
     plt.tight_layout()
-    plt.draw()
+    plt.savefig('demo_%s.png' % (class_name))
 
 def demo(net, image_name):
     """Detect object classes in an image using pre-computed object proposals."""
