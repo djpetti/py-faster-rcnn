@@ -37,3 +37,6 @@ RUN pip install cython easydict pyaml
 
 # Edit the matplotlib config.
 COPY matplotlibrc /etc/matplotlibrc
+
+# Copy the script that allows us to run GUI apps.
+COPY setup_gui_env.sh /
